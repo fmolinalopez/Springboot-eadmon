@@ -119,4 +119,12 @@ public class RepositorioExpedienteImpl implements RepositorioExpediente{
 	public void eliminarExpediente(Integer id) {
 		this.expedientesBBDD.remove(this.expedientesBBDD.indexOf(this.getExpedientePorId(id)));
 	}
+
+	@Override
+	public Expediente eliminarDocumentoDeExpediente(Integer idExp, Integer idDoc) {
+		final Expediente exp = this.getExpedientePorId(idExp);
+		exp.getDocumentos().remove(exp.getDocumentos().stream().filter(d -> d.getId().equals(idDoc)).findFirst().orElse(null));
+		
+		return exp;
+	}
 }

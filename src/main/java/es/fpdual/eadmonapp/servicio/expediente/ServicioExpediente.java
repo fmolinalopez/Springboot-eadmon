@@ -21,4 +21,6 @@ public interface ServicioExpediente {
 	public Expediente modificarExpediente(Integer id, Expediente expediente);
 	
 	public void eliminarExpediente(Integer id);
+	
+	public Expediente eliminarDocumentoDeExpediente(Integer idExp, Integer idDoc);
 }

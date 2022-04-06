@@ -63,4 +63,9 @@ public class ExpedienteController {
 	public void eliminarExpediente(@PathVariable("id") Integer id) {
 		this.servicioExpediente.eliminarExpediente(id);
 	}
+	
+	@DeleteMapping("/expediente/{id}/doc/{idDoc}")
+	public Expediente eliminarDocumentoDeExpediente(@PathVariable("id") Integer id, @PathVariable("idDoc") Integer idDoc) {
+		return this.servicioExpediente.eliminarDocumentoDeExpediente(id, idDoc);
+	}
 }

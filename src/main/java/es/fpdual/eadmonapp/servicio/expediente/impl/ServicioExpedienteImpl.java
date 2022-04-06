@@ -30,7 +30,6 @@ public class ServicioExpedienteImpl implements ServicioExpediente {
 
 	@Override
 	public Expediente altaExpediente(Expediente expediente) {
-		
 		return this.repositorioExpediente.altaExpediente(
 				new Expediente(this.repositorioExpediente.getSiguienteId(),
 						expediente.getAlias(), expediente.getDocumentos(),
@@ -75,5 +74,10 @@ public class ServicioExpedienteImpl implements ServicioExpediente {
 	@Override
 	public void eliminarExpediente(Integer id) {
 		this.repositorioExpediente.eliminarExpediente(id);
+	}
+
+	@Override
+	public Expediente eliminarDocumentoDeExpediente(Integer idExp, Integer idDoc) {
+		return this.repositorioExpediente.eliminarDocumentoDeExpediente(idExp, idDoc);
 	}
 }
